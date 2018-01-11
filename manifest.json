@@ -1,16 +1,18 @@
+// mostly taken from http://tomoprogramming.blogspot.com/2013/08/simple-tutorial-for-chrome-extension.html
 {
   "manifest_version": 2,
-
-  "name": "Getting started example",
-  "description": "This extension allows the user to change the background color of the current page.",
-  "version": "1.0",
-
-  "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
-  },
+  
+  "name": "Quick link",
+  "description": "When text is selected and right-clicked, there is an option to 'Quick link,' going to the link provided by Google's 'I'm feeling lucky'",
+  "version": "0.0.1",
   "permissions": [
-    "activeTab",
-    "storage"
-  ]
+    "contextMenus"
+  ],
+  
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "onrightclick.js"
+    ]
+  }
 }
